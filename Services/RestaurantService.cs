@@ -19,16 +19,11 @@ namespace RestaurantsFlexDevAcademy.Services
             return await _context.Restaurants.OrderBy(r => r.Name).ToListAsync();
         }
 
-        public async void Add(Restaurant restaurant)
+        public async Task Add(Restaurant restaurant)
         {
             await _context.Restaurants.AddAsync(restaurant);
 
-            if(_context.Restaurants.Count() == 0)
-            {
-                restaurant.Id = 1;
-            }
-
-            //restaurant.Id = _context.Restaurants.Max(r => r.Id) + 1;
+            restaurant.Id = _context.Restaurants.Max(r => r.Id) + 1;
             
             await _context.SaveChangesAsync();
         }
@@ -38,7 +33,7 @@ namespace RestaurantsFlexDevAcademy.Services
             return await _context.Restaurants.FirstOrDefaultAsync(r => r.Id == id);
         }
 
-        public async void Delete(int id)
+        public async Task Delete(int id)
         {
             var restaurant = await Get(id);
 
@@ -49,7 +44,7 @@ namespace RestaurantsFlexDevAcademy.Services
             }
         }
 
-        public async void Update(Restaurant restaurant)
+        public async Task Update(Restaurant restaurant)
         {
             var existingRestaurant =  await Get(restaurant.Id);
 

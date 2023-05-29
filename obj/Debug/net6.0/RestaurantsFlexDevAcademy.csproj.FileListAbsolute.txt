@@ -62,3 +62,5 @@ C:\Users\ADRUKALA\source\repos\RestaurantsFlexDevAcademy\RestaurantsFlexDevAcade
 C:\Users\ADRUKALA\source\repos\RestaurantsFlexDevAcademy\RestaurantsFlexDevAcademy\bin\Debug\net6.0\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\ADRUKALA\source\repos\RestaurantsFlexDevAcademy\RestaurantsFlexDevAcademy\bin\Debug\net6.0\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
 C:\Users\ADRUKALA\source\repos\RestaurantsFlexDevAcademy\RestaurantsFlexDevAcademy\obj\Debug\net6.0\RestaurantsFlexDevAcademy.csproj.CopyComplete
+C:\Users\ADRUKALA\source\repos\RestaurantsFlexDevAcademy\RestaurantsFlexDevAcademy\bin\Debug\net6.0\Humanizer.dll
+C:\Users\ADRUKALA\source\repos\RestaurantsFlexDevAcademy\RestaurantsFlexDevAcademy\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll

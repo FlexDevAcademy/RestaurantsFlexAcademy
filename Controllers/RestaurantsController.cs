@@ -29,11 +29,11 @@ namespace RestaurantsFlexDevAcademy.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create(Restaurant restaurant)
+        public async Task<IActionResult> Create(Restaurant restaurant)
         {
             if(ModelState.IsValid)
             {
-                _db.Add(restaurant);
+                await _db.Add(restaurant);
 
                 return RedirectToAction("Details", new { id = restaurant.Id });
             }
@@ -70,9 +70,9 @@ namespace RestaurantsFlexDevAcademy.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id, IFormCollection form)
+        public async Task<IActionResult> Delete(int id, IFormCollection form)
         {
-            _db.Delete(id);
+            await _db.Delete(id);
 
             return RedirectToAction("Index");
         }
@@ -86,11 +86,11 @@ namespace RestaurantsFlexDevAcademy.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Restaurant restaurant)
+        public async Task<IActionResult> Edit(Restaurant restaurant)
         {
             if(ModelState.IsValid)
             {
-                _db.Update(restaurant);
+                await _db.Update(restaurant);
 
                 return RedirectToAction("Details", new { id = restaurant.Id });
             }

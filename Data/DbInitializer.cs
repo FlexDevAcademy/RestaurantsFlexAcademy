@@ -5,10 +5,9 @@ namespace RestaurantsFlexDevAcademy.Data
 {
     public static class DbInitializer
     {
-        public static async void Initialize(RestaurantContext context) {
-        context.Database.EnsureCreated();
+        public static async Task Initialize(RestaurantContext context) {
 
-            if(context.Restaurants.Any())
+            if (context.Restaurants.Any())
             {
                 return;
             }
@@ -21,8 +20,8 @@ namespace RestaurantsFlexDevAcademy.Data
                 new Restaurant { Id = 4, Name = "Chmeli Suneli", Cuisine = CuisineType.Gregorian}
             };
 
-            await context.Restaurants.AddRangeAsync(restaurants);
-            await context.SaveChangesAsync();
+           await context.Restaurants.AddRangeAsync(restaurants);
+           await context.SaveChangesAsync();
         }
     }
 }

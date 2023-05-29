@@ -6,12 +6,12 @@ namespace RestaurantsFlexDevAcademy.Services
     {
         Task<IEnumerable<Restaurant>> GetAll();
 
-        void Add(Restaurant restaurant);
+        Task Add(Restaurant restaurant);
 
         Task<Restaurant> Get(int id);
 
-        void Delete(int id);
+        Task Delete(int id);
 
-        void Update(Restaurant restaurant);
+        Task Update(Restaurant restaurant);
     }
 }
