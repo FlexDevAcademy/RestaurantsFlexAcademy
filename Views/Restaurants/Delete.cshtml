@@ -1,0 +1,21 @@
+﻿@model Restaurant
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Are you sure you want to delete @Html.DisplayFor(model => model.Name) Restaurant?</h2>
+<hr/>
+
+<div>
+    @using(Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group my-2">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </div>
+        <div class="form-group">
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

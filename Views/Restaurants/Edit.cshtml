@@ -1,0 +1,40 @@
+﻿@model Restaurant
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit data for @Html.DisplayFor(model => model.Name) Restaurant</h2>
+<hr/>
+
+@using(Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new {@class = "text-danger"})
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group mb-3">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new {@class = "control-label col-md-2"})
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { AddHtmlAttributeValue= new {@class = "form-control"}})
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class =" text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cuisine, htmlAttributes: new {@class = "control=label col-md-2"})
+            <div class="cold-md-10">
+                @Html.DropDownListFor(model => model.Cuisine, new SelectList
+                    (Enum.GetValues(typeof(CuisineType)).Cast<CuisineType>()), "Selec Type", new { @class ="form-control"})
+                @Html.ValidationMessageFor(model => model.Cuisine , "", new { @class = "text-danger"})
+            </div>
+        </div>
+
+        <div class="form-group my-3">
+            <input type="submit" value="Save" class="btn btn-primary" />
+        </div>
+    </div>
+}
+@Html.ActionLink("Back To List", "Index")
